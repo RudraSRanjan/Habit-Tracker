@@ -1,0 +1,56 @@
+<% for(let habit of habits) {%>
+    <div class="week-view">
+
+       
+        <div style="display: flex; justify-content: space-between;">
+        <h3 style="position: relative; margin-top: 40px; margin-bottom: 20px;"><%= habit.name%></h3>
+        <h4 style="position: relative; margin-top: 40px; margin-bottom: 20px;"><%= habit.desc%></h4>
+        </div>
+           <!-- Details of habits in a week view -->
+            <div class="dates" style="display: flex;">
+
+                <%for(let date of week) { %>
+
+                <div class="day" style="display: block; width: 100%; margin-right: 30px;">
+                    <div class="date-container" style="display: inline;">
+                        <p style="position: relative;"><%= date%></p>
+                    </div>
+
+                    <% 
+                       var flag;
+                       var status;
+
+                       habit.dates.find((i)=>{
+                        if(i.date===date)
+                        {
+                            flag=true;
+                            status=i.status;
+                        }
+                       });
+                    %>
+                    
+                    <!-- status completion -->
+                     <div class="symbols" style="height: 30px; width: 50px; position: relative;">
+                        <a href="/habit/updatestatus?id=<%=habit._id%>&date=<%=date%>" class="status-mark">
+
+                            <% if(flag && status==="yes") {%>
+                                <i class="fa-regular fa-circle-check" ></i> <%}
+                               else if(flag && status==="no") {%>
+                                <i class="fa-regular fa-circle-xmark" ></i> <%}    
+                               else{%>
+                                <i class="fa-solid fa-circle-minus" style="color: black;"></i>
+                            <%}%>        
+                       </a>
+                     </div>  
+                </div>
+                
+               <% } %>
+
+               <div class="delete-icon" style="position: relative;">
+                <a href="/habit/delete/?id=<%= habit._id %>">
+                    <i class="fa-solid fa-trash-can" style="color: red;"></i> 
+                </a>
+               </div>
+            </div>
+    </div>
+<%} %>
