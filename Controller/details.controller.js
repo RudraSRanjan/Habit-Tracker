@@ -12,16 +12,18 @@ export default class HabitController
     }
 
      getOneWeekDate(){
-        let months = ["","Jan", "Feb", "March", "Apr", "May", "June", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+       
         let week = [];
         for(let i = 0; i<7; i++){
             const currentDate = new Date();
             currentDate.setDate(currentDate.getDate() +i);
             let mm = currentDate.getMonth()+1;
-            mm = months[mm];
+           
+            const year= currentDate.getFullYear();
             let dd = currentDate.getDate();
             if (dd < 10) dd = '0' + dd;
-            week.push(mm +" " +dd);
+            if (mm < 10) mm = '0' + mm;
+            week.push(dd +"/" +mm+ "/"+ year);
         }
         return week;
     }
@@ -83,18 +85,20 @@ export default class HabitController
     async updateStatus(req,res)
     {
         try {
+
+            
             const {date,id}= req.query;
 
             const updatedHabit= await this.habitRepository.updateStatus(date,id);
 
             if(typeof updatedHabit==="string")
             {
-                return res.status(400).render("weekview",{message:updatedHabit});
+                return res.status(400).redirect("/habit/home",{message:updatedHabit});
             }
 
-            else{
-                res.render("weekview",{message:"Status Updated Successfully"});
-            }
+           
+            res.redirect("/habit/weekview");
+            
             
         } catch (error) {
             res.send(error);

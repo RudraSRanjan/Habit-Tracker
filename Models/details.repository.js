@@ -125,15 +125,12 @@ class HabitRepository
                 {
                     if(i.status==="yes")
                         i.status="no";
-                }
-                else if(i.date===date)
-                {
-                        if(i.status==="no")
+                
+                    else if(i.status==="no")
                             i.status="none";
-                }
-                else 
-                {
-                    if(i.status==="none")
+                              
+                
+                    else if(i.status==="none")
                         i.status="yes";
                 }
                 flag=true;

@@ -31,12 +31,12 @@
                     
                     <!-- status completion -->
                      <div class="symbols" style="height: 30px; width: 50px; position: relative;">
-                        <a href="/habit/updatestatus?id=<%=habit._id%>&date=<%=date%>" class="status-mark">
+                        <a href="/habit/updatestatus/?id=<%=habit._id%>&date=<%=date%>" class="status-mark">
 
                             <% if(flag && status==="yes") {%>
-                                <i class="fa-regular fa-circle-check" ></i> <%}
+                                <i class="fa-regular fa-circle-check" style="color: rgba(24, 196, 21, 0.707);"></i> <%}
                                else if(flag && status==="no") {%>
-                                <i class="fa-regular fa-circle-xmark" ></i> <%}    
+                                <i class="fa-regular fa-circle-xmark" style="color: rgba(248, 0, 0, 0.721);" ></i> <%}    
                                else{%>
                                 <i class="fa-solid fa-circle-minus" style="color: black;"></i>
                             <%}%>        
