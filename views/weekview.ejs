@@ -34,11 +34,11 @@
                         <a href="/habit/updatestatus/?id=<%=habit._id%>&date=<%=date%>" class="status-mark">
 
                             <% if(flag && status==="yes") {%>
-                                <i class="fa-regular fa-circle-check" style="color: rgba(24, 196, 21, 0.707);"></i> <%}
+                                <i class="fa-regular fa-circle-check" style="color: rgba(24, 196, 21, 0.707);"> Done</i> <%}
                                else if(flag && status==="no") {%>
-                                <i class="fa-regular fa-circle-xmark" style="color: rgba(248, 0, 0, 0.721);" ></i> <%}    
+                                <i class="fa-regular fa-circle-xmark" style="color: rgba(248, 0, 0, 0.721);" >Not-Done</i> <%}    
                                else{%>
-                                <i class="fa-solid fa-circle-minus" style="color: black;"></i>
+                                <i class="fa-solid fa-circle-minus" style="color: black;">Unmarked</i>
                             <%}%>        
                        </a>
                      </div>  

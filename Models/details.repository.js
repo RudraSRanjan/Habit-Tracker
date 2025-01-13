@@ -43,6 +43,7 @@ class HabitRepository
 
            
            const date= this.getToDate();
+           
 
            
 
@@ -107,18 +108,15 @@ class HabitRepository
         try {
 
             const habit= await habitModel.findById({_id:habitID});
-            console.log(habit);
-
+            
             if(!habit)
             {
                 return "Habit Not Found";
             }
 
             let dates= habit.dates;
-            console.log(date);
-
-            let flag=false;
-
+            
+           
             //Using find() method to find in array
             dates.find((i)=>{
                 if(i.date===date)
@@ -133,14 +131,14 @@ class HabitRepository
                     else if(i.status==="none")
                         i.status="yes";
                 }
-                flag=true;
+               
 
             })
 
             
             
            
-            console.log(habit);
+            
             await habit.save();
 
             
