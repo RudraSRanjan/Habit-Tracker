@@ -8,7 +8,7 @@ const url= process.env.mongoURL;
 export const connectToMongoDB= async()=>{
 
     try {
-        await mongoose.connect(url);
+        await mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true});
         
         console.log("Connected to database using Mongoose");
     } catch (error) {
