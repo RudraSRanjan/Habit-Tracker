@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 // dotenv.config();
 
-const url= "mongodb://localhost:27017/Tracker";
+const url= "mongodb://localhost:27017/";
 
 export const connectToMongoDB= async()=>{
 
