@@ -14,9 +14,9 @@ export default class HabitController
      getOneWeekDate(){
        
         let week = [];
-        for(let i = 0; i<7; i++){
+        for(let i = 6; i>=0; i--){
             const currentDate = new Date();
-            currentDate.setDate(currentDate.getDate() +i);
+            currentDate.setDate(currentDate.getDate() -i);
             let mm = currentDate.getMonth()+1;
            
             const year= currentDate.getFullYear();

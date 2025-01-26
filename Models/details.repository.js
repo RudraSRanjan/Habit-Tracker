@@ -55,7 +55,7 @@ class HabitRepository
            let dateArray=[{date:this.getDateString(date), status:"none"}];
            for (let i=0;i<6;i++)
            {
-              date.setDate(date.getDate() + 1);
+              date.setDate(date.getDate() - 1);
               
               dateArray.push({date:this.getDateString(date),status:"none"} );
            }
