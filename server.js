@@ -1,5 +1,5 @@
 import express from "express";
-import {connectToMongoDB} from "../Habit-Tracker/Config/config.js";
+import {connectToMongoDB} from "./Config/config.js";
 import ejsLayouts from "express-ejs-layouts";
 import path from "path";
 import habitRouter from "./Routes/details.routes.js";
