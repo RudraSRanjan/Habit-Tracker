@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const url= "mongodb://localhost:27017/Tracker";
+dotenv.config();
+
+const url= process.env.mongoURL;
 
 export const connectToMongoDB= async()=>{
 
