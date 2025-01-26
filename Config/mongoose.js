@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
-dotenv.config();
+// dotenv.config();
 
-const url= process.env.mongoURL;
+const url= "mongodb://localhost:27017/Tracker";
 
 export const connectToMongoDB= async()=>{
 
     try {
-        await mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true});
+        await mongoose.connect(url);
         
         console.log("Connected to database using Mongoose");
     } catch (error) {

@@ -1,7 +1,7 @@
-<a href="/" style="border: 3px; padding: 10px 40px 10px 40px; border-color: black; border-style: dashed; text-decoration: none; background-color: aqua; color: black; margin-top: 50px; position: absolute;">Home</a>
+<a href="/" style="border: 3px; padding: 10px 40px 10px 40px; border-color: black; border-style: dashed; text-decoration: none; background-color: aqua; color: black; margin-top: 100px; position: relative;">Home</a>
 
 <% for(let habit of habits) {%>
-    <div class="week-view" style="margin-top: 150px; position: absolute;">
+    <div class="week-view">
 
        
         <div style="display: flex; justify-content: space-between;">
@@ -36,7 +36,7 @@
                         <a href="/habit/updatestatus/?id=<%=habit._id%>&date=<%=date%>" class="status-mark">
 
                             <% if(flag && status==="yes") {%>
-                                <i class="fa-regular fa-circle-check" style="color: rgba(24, 196, 21, 0.707);"> </i> <%}
+                                <i class="fa-regular fa-circle-check" style="color: rgba(24, 196, 21, 0.707);"></i> <%}
                                else if(flag && status==="no") {%>
                                 <i class="fa-regular fa-circle-xmark" style="color: rgba(248, 0, 0, 0.721);" ></i> <%}    
                                else{%>
