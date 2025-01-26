@@ -3,7 +3,9 @@ import {connectToMongoDB} from "./Config/config.js";
 import ejsLayouts from "express-ejs-layouts";
 import path from "path";
 import habitRouter from "./Routes/details.routes.js";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 
 
@@ -25,6 +27,8 @@ server.set(
     path.join(path.resolve(), 'views')
   );
 
+const port = process.env.PORT || 4000;
+
 server.use("/habit", habitRouter);
 
 server.get("/",(req,res)=>
@@ -32,7 +36,7 @@ server.get("/",(req,res)=>
     res.render("home",{message:null});
 })
 
-server.listen(4200,()=>
+server.listen(port,()=>
 {
     console.log("Server listening on port 4200");
     connectToMongoDB();
