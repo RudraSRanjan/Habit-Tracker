@@ -30,7 +30,7 @@ export default class HabitController
 
     async weekView(req,res)
     {
-        let habits= await habitModel.find();
+        let habits= await habitModel.find({});
         let week= this.getOneWeekDate();
        
         res.render("weekview",{habits,week});
