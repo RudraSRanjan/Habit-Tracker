@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 // dotenv.config();
 
-const url= "mongodb+srv://rudraranjan212:Qd5cLgyWNU8fQjyN@tracker.zb9v5.mongodb.net/?retryWrites=true&w=majority&appName=Tracker";
+const url= "mongodb+srv://User:Passw0rd@tracker.zb9v5.mongodb.net/?retryWrites=true&w=majority&appName=Tracker";
 
 export const connectToMongoDB= async()=>{
 
