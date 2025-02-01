@@ -35,24 +35,24 @@
 Habit Tracker
     |
     |               
-    |--->config---->|--->mongoose.js
+    |--->Config---->|--->mongoose.js
     |               
     |
     |                 
-    |--->controllers-->|-->details.controller.js
+    |--->Controller-->|-->details.controller.js
     |                  
     |
     |               
-    |--->models---->|-->details.repository.js
+    |--->Models---->|-->details.repository.js
     |               
     |
     |              
     |              
-    |--->routes---->|-->details.routes.js
+    |--->Routes---->|-->details.routes.js
     |               
     |
     |              
-    |--->schema---->|--->habit.schema.js
+    |--->Schema---->|--->habit.schema.js
     |             
     |
     |
@@ -61,6 +61,8 @@ Habit Tracker
     |              |--->weekview.ejs              
     |
     |-->.gitignore
+    |-->package-lock.json
     |-->package.json
+    |-->server.js                            
     |
 ```  
